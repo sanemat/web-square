@@ -1,24 +1,21 @@
 import React from "react"
 
 import { Layout } from "../components/layout"
+import "./tic-tac-toe.css"
 
 class Square extends React.Component {
   render() {
-    return (
-      <button className="square">
-        {/* TODO */}
-      </button>
-    );
+    return <button className="square">{/* TODO */}</button>
   }
 }
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square />
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = "Next player: X"
 
     return (
       <div>
@@ -39,7 +36,7 @@ class Board extends React.Component {
           {this.renderSquare(8)}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -55,11 +52,11 @@ class Game extends React.Component {
           <ol>{/* TODO */}</ol>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default function() {
+export default function () {
   return (
     <Layout>
       <Game></Game>
