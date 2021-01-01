@@ -1,37 +1,28 @@
 import React from "react"
 import { Square } from "./square"
 
-class Board extends React.Component {
-  renderSquare(i) {
-    return (
-      <Square
-        value={this.props.squares[i]}
-        onClick={() => this.props.onClick(i)}
-      />
-    )
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+export function Board({ squares, onClick }) {
+  return (
+    <div>
+      <div className="board-row">
+        {renderSquare(0, squares, onClick)}
+        {renderSquare(1, squares, onClick)}
+        {renderSquare(2, squares, onClick)}
       </div>
-    )
-  }
+      <div className="board-row">
+        {renderSquare(3, squares, onClick)}
+        {renderSquare(4, squares, onClick)}
+        {renderSquare(5, squares, onClick)}
+      </div>
+      <div className="board-row">
+        {renderSquare(6, squares, onClick)}
+        {renderSquare(7, squares, onClick)}
+        {renderSquare(8, squares, onClick)}
+      </div>
+    </div>
+  )
 }
 
-export { Board }
+function renderSquare(i, squares, onClick) {
+  return <Square value={squares[i]} onClick={() => onClick(i)} />
+}
