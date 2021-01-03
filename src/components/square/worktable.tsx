@@ -1,10 +1,21 @@
-import React from "react"
+import React, { useState } from "react"
 
 export function Worktable() {
+  const [history, setHistory] = useState([
+    {
+      squares: [
+        [0, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 0, 0],
+      ],
+    },
+  ])
+
+  const current = history[0]
   return (
     <div className="worktable">
       <div className="worktable-board">
-        <Board></Board>
+        <Board squares={current.squares}></Board>
       </div>
     </div>
   )
@@ -13,18 +24,15 @@ export function Worktable() {
 function Board({ squares }) {
   return (
     <>
-      <div className="board-row">
-        <Square value="0" />
-        <Square value="1" />
-        <Square value="2" />
-        <Square value="3" />
-      </div>
-      <div className="board-row">
-        <Square value="4" />
-        <Square value="5" />
-        <Square value="6" />
-        <Square value="7" />
-      </div>
+      {squares.map(row => {
+        return (
+          <div className="board-row">
+            {row.map(v => {
+              return <Square value={v} />
+            })}
+          </div>
+        )
+      })}
     </>
   )
 }
