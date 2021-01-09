@@ -1,6 +1,8 @@
 import React, { useState } from "react"
+import { Board } from "./board"
 
 export function Worktable() {
+  // clickSquare then it inverse the value.
   const [history, setHistory] = useState([
     {
       squares: [
@@ -19,24 +21,4 @@ export function Worktable() {
       </div>
     </div>
   )
-}
-
-function Board({ squares }) {
-  return (
-    <>
-      {squares.map(row => {
-        return (
-          <div className="board-row">
-            {row.map(v => {
-              return <Square value={v} />
-            })}
-          </div>
-        )
-      })}
-    </>
-  )
-}
-
-function Square({ value }) {
-  return <button className="square">{value}</button>
 }
