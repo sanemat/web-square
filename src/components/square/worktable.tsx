@@ -17,8 +17,14 @@ export function Worktable() {
   return (
     <div className="worktable">
       <div className="worktable-board">
-        <Board squares={current.squares}></Board>
+        <Board
+          squares={current.squares}
+          onClick={(x, y) => clickSquare(x, y, history, setHistory)}
+        />
       </div>
     </div>
   )
 }
+
+// NOTE: stub useState?
+function clickSquare(x, y, h, setH) {}
