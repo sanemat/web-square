@@ -1,14 +1,19 @@
 import { Square } from "./square"
 import React from "react"
 
-export function Board({ squares }) {
+export function Board({ squares, onClick }) {
   return (
     <>
-      {squares.map(row => {
+      {squares.map((row, rowIndex) => {
         return (
           <div className="board-row">
-            {row.map(v => {
-              return <Square value={v} />
+            {row.map((v, columnIndex) => {
+              return (
+                <Square
+                  value={v}
+                  onClick={() => onClick(columnIndex, rowIndex)}
+                />
+              )
             })}
           </div>
         )

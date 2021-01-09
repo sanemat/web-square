@@ -27,4 +27,6 @@ export function Worktable() {
 }
 
 // NOTE: stub useState?
-function clickSquare(x, y, h, setH) {}
+function clickSquare(x, y, h, setH) {
+  // got x and y clicked
+}
