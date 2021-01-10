@@ -13,7 +13,7 @@ export function Worktable() {
     },
   ])
 
-  const current = history[0]
+  const current = history[history.length - 1]
   return (
     <div className="worktable">
       <div className="worktable-board">
@@ -27,6 +27,10 @@ export function Worktable() {
 }
 
 // NOTE: stub useState?
-function clickSquare(x, y, h, setH) {
+function clickSquare(x, y, history, setHistory) {
   // got x and y clicked
+  const current = history[history.length - 1]
+  const squares = current.squares.slice()
+  squares[y][x] === 0 ? (squares[y][x] = 1) : (squares[y][x] = 0)
+  setHistory([...history, { squares }])
 }
