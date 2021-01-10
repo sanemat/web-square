@@ -22,6 +22,9 @@ export function Worktable() {
           onClick={(x, y) => clickSquare(x, y, history, setHistory)}
         />
       </div>
+      <div className="worktable-editable">
+        <Editable squares={current.squares} />
+      </div>
     </div>
   )
 }
@@ -33,4 +36,8 @@ function clickSquare(x, y, history, setHistory) {
   const squares = current.squares.slice()
   squares[y][x] === 0 ? (squares[y][x] = 1) : (squares[y][x] = 0)
   setHistory([...history, { squares }])
+}
+
+function Editable({ squares }) {
+  return <textarea value={JSON.stringify(squares, null)} onChange={ev => {}} />
 }
