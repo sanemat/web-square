@@ -6,12 +6,13 @@ export function Board({ squares, onClick }) {
     <>
       {squares.map((row, rowIndex) => {
         return (
-          <div className="board-row">
+          <div className="board-row" key={`row${rowIndex}`}>
             {row.map((v, columnIndex) => {
               return (
                 <Square
                   value={v}
                   onClick={() => onClick(columnIndex, rowIndex)}
+                  key={`x${columnIndex}y${rowIndex}`}
                 />
               )
             })}
