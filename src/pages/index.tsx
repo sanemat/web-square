@@ -5,7 +5,7 @@ import { Worktable } from "../components/square/worktable"
 export default function IndexPage() {
   return (
     <Layout>
-      <Worktable></Worktable>
+      <Worktable />
     </Layout>
   )
 }
