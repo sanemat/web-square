@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Board } from "./board"
+import styles from "./worktable.module.css"
 
 export function Worktable() {
   // clickSquare then it inverse the value.
@@ -22,12 +23,7 @@ export function Worktable() {
           onClick={(x, y) => clickSquare(x, y, history, setHistory)}
         />
       </div>
-      <div
-        className="worktable-editable"
-        style={{
-          marginTop: `1rem`,
-        }}
-      >
+      <div className={styles.worktableEditable}>
         <Editable squares={current.squares} />
       </div>
     </div>
