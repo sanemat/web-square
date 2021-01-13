@@ -22,7 +22,12 @@ export function Worktable() {
           onClick={(x, y) => clickSquare(x, y, history, setHistory)}
         />
       </div>
-      <div className="worktable-editable">
+      <div
+        className="worktable-editable"
+        style={{
+          marginTop: `1rem`,
+        }}
+      >
         <Editable squares={current.squares} />
       </div>
     </div>
