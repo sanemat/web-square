@@ -36,8 +36,8 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "test": "npm run format:check"
