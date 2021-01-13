@@ -1,6 +1,7 @@
 import React from "react"
 import { Worktable } from "../components/square/worktable"
 import { Header } from "../components/header"
+import styles from "./index.module.css"
 
 export default function IndexPage() {
   return (
@@ -16,13 +17,7 @@ export default function IndexPage() {
         <main>
           <Worktable />
         </main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          Matt
-        </footer>
+        <footer className={styles.footer}>Matt</footer>
       </div>
     </>
   )
