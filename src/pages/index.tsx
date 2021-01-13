@@ -7,13 +7,7 @@ export default function IndexPage() {
   return (
     <>
       <Header siteTitle={`Square Supporter`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div className={styles.main}>
         <main>
           <Worktable />
         </main>
