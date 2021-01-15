@@ -16,8 +16,8 @@ export function Worktable() {
 
   const current = history[history.length - 1]
   return (
-    <div className="worktable">
-      <div className="worktable-board">
+    <div className={styles.worktable}>
+      <div className={styles.worktableBoard}>
         <Board
           squares={current.squares}
           onClick={(x, y) => clickSquare(x, y, history, setHistory)}
