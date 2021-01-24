@@ -26,7 +26,16 @@ export function Worktable() {
       <div className={styles.worktableEditable}>
         <textarea
           value={JSON.stringify(current.squares, null)}
-          onChange={ev => {}}
+          onChange={ev => {
+            let squares
+            try {
+              // NOTE: validate values, 0 or 1, column count, row count
+              squares = JSON.parse(ev.target.value)
+              setHistory([...history, { squares: squares }])
+            } catch (e) {
+              console.error(e)
+            }
+          }}
         />
       </div>
     </div>
