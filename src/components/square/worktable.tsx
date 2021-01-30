@@ -15,6 +15,8 @@ export function Worktable() {
   ])
 
   const current = history[history.length - 1]
+  const width = current.squares[0].length
+  const height = current.squares.length
   return (
     <div className={styles.worktable}>
       <div className={styles.worktableBoard}>
@@ -37,6 +39,14 @@ export function Worktable() {
             }
           }}
         />
+      </div>
+      <div>
+        <label>width</label>
+        <input type="text" value={width} />
+      </div>
+      <div>
+        <label>height</label>
+        <input type="text" value={height} />
       </div>
     </div>
   )
