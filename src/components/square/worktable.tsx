@@ -65,7 +65,29 @@ export function Worktable() {
       </div>
       <div>
         <label>height</label>
-        <input type="text" value={height} onChange={ev => {}} />
+        <input
+          type="text"
+          value={height}
+          onChange={ev => {
+            let newHeight
+            let squares
+            try {
+              newHeight = parseInt(ev.target.value, 10)
+              if (current.squares.length < newHeight) {
+                squares = current.squares.concat(
+                  Array.from(new Array(newHeight - current.squares.length), _ =>
+                    new Array(width).fill(1)
+                  )
+                )
+              } else {
+                squares = current.squares.slice(0, newHeight)
+              }
+              setHistory([...history, { squares }])
+            } catch (e) {
+              console.error(e)
+            }
+          }}
+        />
       </div>
     </div>
   )
