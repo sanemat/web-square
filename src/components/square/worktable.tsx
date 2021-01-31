@@ -42,11 +42,30 @@ export function Worktable() {
       </div>
       <div>
         <label>width</label>
-        <input type="text" value={width} />
+        <input
+          type="text"
+          value={width}
+          onChange={ev => {
+            let newWidth
+            try {
+              newWidth = parseInt(ev.target.value, 10)
+              const squares = current.squares.map(row => {
+                if (row.length < newWidth) {
+                  return row.concat(new Array(newWidth - row.length).fill(1))
+                } else {
+                  return row.slice(0, newWidth)
+                }
+              })
+              setHistory([...history, { squares }])
+            } catch (e) {
+              console.error(e)
+            }
+          }}
+        />
       </div>
       <div>
         <label>height</label>
-        <input type="text" value={height} />
+        <input type="text" value={height} onChange={ev => {}} />
       </div>
     </div>
   )
