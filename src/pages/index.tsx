@@ -3,7 +3,8 @@ import { Worktable } from "../components/square/worktable"
 import { Header } from "../components/header"
 import styles from "./index.module.css"
 
-export default function IndexPage() {
+export default function IndexPage({ location }) {
+  console.log(location)
   return (
     <>
       <Header siteTitle={`Square Supporter`} />
