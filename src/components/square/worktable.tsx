@@ -2,15 +2,11 @@ import React, { useState } from "react"
 import { Board } from "./board"
 import styles from "./worktable.module.css"
 
-export function Worktable() {
+export function Worktable({ given }) {
   // clickSquare then it inverse the value.
   const [history, setHistory] = useState([
     {
-      squares: [
-        [0, 0, 0, 0],
-        [0, 1, 0, 0],
-        [0, 0, 0, 0],
-      ],
+      squares: given,
     },
   ])
 
