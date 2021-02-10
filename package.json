@@ -47,7 +47,6 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "test": "jest",
-    "verify": "npm run format:check && npm test"
+    "test": "jest"
   }
 }
