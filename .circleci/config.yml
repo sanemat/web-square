@@ -7,7 +7,7 @@ jobs:
       - checkout
       - node/install-packages
       - run:
-          command: npm run test
+          command: npm run format:check && npm test -- -u
 orbs:
   node: circleci/node@4.1.0
 version: 2.1

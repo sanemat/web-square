@@ -21,7 +21,14 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "^2.2.1"
+    "@types/jest": "^26.0.20",
+    "@types/react-test-renderer": "^17.0.0",
+    "babel-jest": "^26.6.3",
+    "babel-preset-gatsby": "^0.12.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.1"
   },
   "keywords": [
     "gatsby"
@@ -40,6 +47,6 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "test": "npm run format:check"
+    "test": "jest"
   }
 }
