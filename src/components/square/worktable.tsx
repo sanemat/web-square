@@ -1,16 +1,25 @@
 import React, { useState } from "react"
 import { Board } from "./board"
 import styles from "./worktable.module.css"
+import { parse } from "../../utils/query-string"
 
-export function Worktable() {
+export function Worktable({ searchQuery }) {
+  const defaultSquares = [
+    [0, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 0, 0],
+  ]
+  let search
+  try {
+    search = parse(searchQuery)
+  } catch (e) {
+    console.error(e)
+  }
+  const squares = search?.squares || defaultSquares
   // clickSquare then it inverse the value.
   const [history, setHistory] = useState([
     {
-      squares: [
-        [0, 0, 0, 0],
-        [0, 1, 0, 0],
-        [0, 0, 0, 0],
-      ],
+      squares: squares,
     },
   ])
 
