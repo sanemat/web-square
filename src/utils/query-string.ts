@@ -1,5 +1,6 @@
-export function stringify<string>(object: Record<string, any>) {
-  return "foo bar"
+export function stringify(object: Record<string, any>): string {
+  const { squares } = object
+  return `squares=${JSON.stringify(squares)}`
 }
 
 export function parse(query: string): { squares?: number[][] } {

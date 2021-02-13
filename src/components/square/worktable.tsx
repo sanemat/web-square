@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import { Board } from "./board"
 import styles from "./worktable.module.css"
-import { parse } from "../../utils/query-string"
+import { parse, stringify } from "../../utils/query-string"
+import { navigate } from "gatsby"
 
 export function Worktable({ searchQuery }) {
   const defaultSquares = [
@@ -109,4 +110,5 @@ function clickSquare(x, y, history, setHistory) {
   const squares = current.squares.slice()
   squares[y][x] === 0 ? (squares[y][x] = 1) : (squares[y][x] = 0)
   setHistory([...history, { squares }])
+  navigate(`?${stringify({ squares: squares })}`)
 }
