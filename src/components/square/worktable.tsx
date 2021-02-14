@@ -44,6 +44,7 @@ export function Worktable({ searchQuery }) {
               // NOTE: validate values, 0 or 1, column count, row count
               squares = JSON.parse(ev.target.value)
               setHistory([...history, { squares: squares }])
+              navigate(`?${stringify({ squares: squares })}`)
             } catch (e) {
               console.error(e)
             }
@@ -67,6 +68,7 @@ export function Worktable({ searchQuery }) {
                 }
               })
               setHistory([...history, { squares }])
+              navigate(`?${stringify({ squares: squares })}`)
             } catch (e) {
               console.error(e)
             }
@@ -93,6 +95,7 @@ export function Worktable({ searchQuery }) {
                 squares = current.squares.slice(0, newHeight)
               }
               setHistory([...history, { squares }])
+              navigate(`?${stringify({ squares: squares })}`)
             } catch (e) {
               console.error(e)
             }
