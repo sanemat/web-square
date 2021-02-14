@@ -22,3 +22,15 @@ describe("parse", () => {
     }).toThrowError(SyntaxError)
   })
 })
+
+describe("stringify", () => {
+  it("stringify correctly", () => {
+    const given = {
+      squares: [
+        [0, 0, 0],
+        [0, 1, 0],
+      ],
+    }
+    expect(stringify(given)).toEqual("squares=[[0,0,0],[0,1,0]]")
+  })
+})
