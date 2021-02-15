@@ -1,5 +1,4 @@
 .square {
-  background: #fff;
   border: 1px solid #999;
   float: left;
   font-size: 24px;
@@ -15,4 +14,12 @@
 
 .square:focus {
   outline: none;
+}
+
+.square-black {
+  background: black;
+}
+
+.square-white {
+  background: white;
 }
