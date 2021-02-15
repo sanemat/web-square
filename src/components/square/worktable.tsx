@@ -38,7 +38,11 @@ export function Worktable({ searchQuery }) {
       </div>
       <div className={styles.worktableEditable}>
         <textarea
-          value={JSON.stringify(current.squares, null)}
+          value={current.squares
+            .map(sq => {
+              return sq.join("")
+            })
+            .join("d")}
           onChange={ev => {
             let squares
             try {
