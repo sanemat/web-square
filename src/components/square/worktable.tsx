@@ -3,6 +3,7 @@ import { Board } from "./board"
 import styles from "./worktable.module.css"
 import { parse, stringify } from "../../utils/query-string"
 import { navigate } from "gatsby"
+import { invert } from "../../utils/invert"
 
 export function Worktable({ searchQuery }) {
   const defaultSquares = [
@@ -101,6 +102,17 @@ export function Worktable({ searchQuery }) {
             }
           }}
         />
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            const inverted = invert(current.squares)
+            setHistory([...history, { squares: inverted }])
+            navigate(`?${stringify({ squares: inverted })}`)
+          }}
+        >
+          invert
+        </button>
       </div>
     </div>
   )
