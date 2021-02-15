@@ -7,7 +7,7 @@ describe("parse", () => {
   })
 
   it("parse correctly", () => {
-    const given = "?squares=[[0,0,0,1],[0,1,1,1]]"
+    const given = "?squares=0001d0111"
     const { squares } = parse(given)
     expect(squares).toEqual([
       [0, 0, 0, 1],
@@ -19,7 +19,7 @@ describe("parse", () => {
     const given = "?squares=invalid"
     expect(() => {
       parse(given)
-    }).toThrowError(SyntaxError)
+    }).toThrowError(Error)
   })
 })
 
@@ -31,6 +31,6 @@ describe("stringify", () => {
         [0, 1, 0],
       ],
     }
-    expect(stringify(given)).toEqual("squares=[[0,0,0],[0,1,0]]")
+    expect(stringify(given)).toEqual("squares=000d010")
   })
 })

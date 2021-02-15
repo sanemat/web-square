@@ -1,6 +1,10 @@
 export function stringify(object: Record<string, any>): string {
   const { squares } = object
-  return `squares=${JSON.stringify(squares)}`
+  return `squares=${squares
+    .map(sq => {
+      return sq.join("")
+    })
+    .join("d")}`
 }
 
 export function parse(query: string): { squares?: number[][] } {
@@ -9,7 +13,15 @@ export function parse(query: string): { squares?: number[][] } {
     return {}
   }
   const squaresQuery = searchParams.get("squares")
-  const squares: number[][] = JSON.parse(squaresQuery)
+  const squares: number[][] = squaresQuery.split("d").map(separated => {
+    return separated.split("").map(numString => {
+      const ret = parseInt(numString, 10)
+      if (isNaN(ret)) {
+        throw new Error("invalid parameters")
+      }
+      return ret
+    })
+  })
   return {
     squares,
   }
