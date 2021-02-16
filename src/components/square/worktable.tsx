@@ -6,11 +6,7 @@ import { navigate } from "gatsby"
 import { invert } from "../../utils/invert"
 
 export function Worktable({ searchQuery }) {
-  const defaultSquares = [
-    [0, 0, 0, 0],
-    [0, 1, 0, 0],
-    [0, 0, 0, 0],
-  ]
+  const defaultSquares = [[]]
   let search
   try {
     search = parse(searchQuery)
