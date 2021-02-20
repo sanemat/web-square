@@ -6,4 +6,13 @@
 }
 
 .worktable-board {
+  padding: 4rem;
+}
+
+.worktable-board-quiet-zone-white {
+  background: white;
+}
+
+.worktable-board-quiet-zone-black {
+  background: black;
 }
