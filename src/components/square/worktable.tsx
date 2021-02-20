@@ -24,9 +24,10 @@ export function Worktable({ searchQuery }) {
   const current = history[history.length - 1]
   const width = current.squares[0].length
   const height = current.squares.length
+  const quietZoneClass = styles.worktableBoardQuietZoneWhite
   return (
     <div className={styles.worktable}>
-      <div className={styles.worktableBoard}>
+      <div className={`${styles.worktableBoard} ${quietZoneClass}`}>
         <Board
           squares={current.squares}
           onClick={(x, y) => clickSquare(x, y, history, setHistory)}
