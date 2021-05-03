@@ -1,0 +1,24 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "22:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: gatsby-image
+    versions:
+    - 3.0.0
+    - 3.1.0
+    - 3.2.0
+    - 3.3.0
+  - dependency-name: "@types/react-test-renderer"
+    versions:
+    - 17.0.1
+  - dependency-name: gatsby
+    versions:
+    - 2.32.0
+  - dependency-name: gatsby-plugin-sharp
+    versions:
+    - 2.13.3
