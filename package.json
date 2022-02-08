@@ -24,7 +24,7 @@
     "@types/jest": "^27.0.3",
     "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.4.4",
-    "babel-preset-gatsby": "^2.3.0",
+    "babel-preset-gatsby": "^2.7.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.4",
     "prettier": "^2.5.1",
