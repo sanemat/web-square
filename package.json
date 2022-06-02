@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/react-test-renderer": "^18.0.0",
-    "babel-jest": "^27.5.1",
+    "babel-jest": "^28.1.0",
     "babel-preset-gatsby": "^2.15.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
